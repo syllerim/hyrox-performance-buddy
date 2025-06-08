@@ -1,5 +1,12 @@
 ## 🤖 `hyrox_fine-tuning-gpt2` — First Attempt: Fine-tuning GPT-2
 
+----
+
+**Note**
+Visualizing the notebook shows **Invalid Notebook** so here is the link to the [Hyrox_Fine_tuning_GPT2.ipynb Colab](https://drive.google.com/file/d/1bY7h1cpv7hyNAuGilJd0-1m3TEGM4JiJ)
+
+----
+
 This notebook captures my first attempt at fine-tuning a language model to generate personalized performance feedback for Hyrox athletes, using the initial feedback data generated in the hyrox_ml analysis.
 
 ### 📌 Goal
