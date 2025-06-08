@@ -35,4 +35,34 @@ To train a lightweight model (`gpt2`) to understand structured performance data 
 
 While GPT-2 worked as a proof of concept, its limitations in understanding structured context and generating more dynamic feedback led me to explore a stronger model.
 
-➡️ I decided to continue with **Mistral-7B** using **LoRA fine-tuning**.
+I decided to continue with **Mistral-7B** using **LoRA fine-tuning**.
+
+
+## 🔄 `hyrox_fine-tuning-mistral` — Second Attempt: Fine-tuning Mistral-7B with LoRA
+
+This second iteration focused on fine-tuning the more powerful `Mistral-7B-Instruct` model using **LoRA (Low-Rank Adaptation)** to improve the quality and personalization of the generated feedback.
+
+### 📌 Goal
+
+To generate feedback that’s more natural, dynamic, and contextually rich than what GPT-2 could provide — while keeping the training lightweight using LoRA and quantization techniques.
+
+### 🧪 What I Did
+
+- Prepared the same dataset using instruction-style prompts (`input`, `context`, `response`), adapted for larger context windows.  
+- Set up a 4-bit quantized model loading configuration (BitsAndBytes).  
+- Configured LoRA adapters for key attention layers (`q_proj`, `v_proj`).  
+- Used Hugging Face’s `Trainer` to begin fine-tuning on Google Colab.  
+- Tokenized data with longer sequence limits to take advantage of Mistral’s capacity.
+
+### ⚠️ Challenges
+
+- Training took **over 2 hours** on Google Colab.  
+- I ran into an infrastructure issue: I didn't define the required `offload_folder` when using `device_map="auto"` for CPU+disk offloading.  
+- After training, I was unable to load the model for inference, and Colab GPU time had run out.
+
+### 📈 Observations
+- It showed the importance of properly managing training configuration and Colab session limits.
+
+### 🔚 Conclusion
+
+This step revealed the real-world challenges of working with larger models. While the results couldn’t be finalized due to resource limits, the model was successfully trained, and the experience highlighted the need for a more scalable alternative, such as **RAG (Retrieval-Augmented Generation)** for future iterations.
