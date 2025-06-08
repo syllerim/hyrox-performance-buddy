@@ -58,5 +58,4 @@ This folder contains attempts at fine-tuning language models to generate more hu
 
 - `hyrox_data_1.csv`: Cleaned dataset used for ML model training and feedback generation  
 - `hyrox_json_instructed.jsonl`: Instruction-formatted dataset used for GPT-2 and Mistral fine-tuning  
-- `hyrox_split_dataset/`: Contains the train/val/test splits of the instruction dataset  
 - `hyrox_gpt2_model/`: Fine-tuned GPT-2 model artifacts (model weights, tokenizer config, etc.) → 🤗 [huggingface](https://huggingface.co/Syllerim/gpt2-hyrox)
